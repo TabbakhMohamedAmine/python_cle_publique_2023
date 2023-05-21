@@ -1,5 +1,5 @@
 CPPFLAGS += `python3-config --includes`
-LIBS = `python3-config --ldflags` -luecc
+LIBS = `python3-config --ldflags` 
 
 COMPOSANT = cle_component
 LIBSO = ${COMPOSANT}.so
