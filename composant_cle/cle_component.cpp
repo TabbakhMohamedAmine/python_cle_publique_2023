@@ -27,6 +27,7 @@ class Cle
 		privatekey = pk;
 		uint8_t a = castStringToUint8(privatekey);
 		uint8_t b = castStringToUint8(publickey);
+		std::cout<<a;
 		//uECC_Curve curve_256k1 = uECC_secp256k1();
 		//uECC_make_key(&a,&b,curve_256k1);
 	}
