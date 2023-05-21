@@ -9,8 +9,7 @@ char const* getVersion() {
 class Cle
 {
     public:
-        Cle(const std::string &privatekey) : privatekey(privatekey) {}
-        ~Cle() {}
+        Cle(){}
 
         const std::string &getPrivateKey() const {
 	       return privatekey;
