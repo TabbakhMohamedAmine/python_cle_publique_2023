@@ -1,5 +1,6 @@
 CPPFLAGS += `python3-config --includes`
 LIBS=`python3-config --ldflags`
+LIBS += -luECC
 
 COMPOSANT = cle_component
 
