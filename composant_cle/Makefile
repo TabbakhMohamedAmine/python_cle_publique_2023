@@ -1,10 +1,10 @@
 CPPFLAGS += `python3-config --includes`
-LIBS = `python3-config --ldflags` 
+LIBS = `python3-config --ldflags` -L/chemin/vers/micro-ecc -luecc
 
 COMPOSANT = cle_component
 LIBSO = ${COMPOSANT}.so
 LIBSO_OBJS = ${COMPOSANT}.o
-LIBS += -L/micro-ecc -luecc
+
 all: test $(LIBSO)
 
 include ../gcc.mk
@@ -22,4 +22,3 @@ clean:
 
 $(DESTINATION_LIBSO): $(LIBSO)
 	cp $< $@
-
