@@ -11,8 +11,9 @@ class Cle
     public:
         Cle(){}
 	
-	void initialize(const std::string &pk){
-		privatekey = pk;
+	const std::string initialize(){
+		privatekey = "test";
+		return privatekey;
 	}
         const std::string &getPrivateKey() const {
 	       return privatekey;
