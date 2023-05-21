@@ -68,7 +68,7 @@ class Cle
 		//uint8_t a = castStringToUint8(privatekey);
 		//uint8_t b = castStringToUint8(publickey);
 		uECC_Curve curve_256k1 = uECC_secp256k1();
-		const unsigned char *b
+		const unsigned char *b;
 		std::cout << "L'élément est : " << uECC_make_key("4b8e29b9b0dddd58a709edba7d6df6c07ebdaf5653e325114bc5318c238f87f0",&b,curve_256k1) << std::endl;
 	}
         const std::string &getPrivateKey() const {
