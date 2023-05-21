@@ -1,5 +1,5 @@
 CPPFLAGS += `python3-config --includes`
-LIBS = `python3-config --ldflags` -L/chemin/vers/micro-ecc -luecc
+LIBS = `python3-config --ldflags` -L/micro-ecc -luecc
 
 COMPOSANT = cle_component
 LIBSO = ${COMPOSANT}.so
