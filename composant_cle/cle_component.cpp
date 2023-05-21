@@ -11,9 +11,8 @@ class Cle
     public:
         Cle(){}
 	
-	const std::string initialize(){
-		privatekey = "test";
-		return privatekey;
+	void initialize(std::string &pk){
+		privatekey = pk
 	}
         const std::string &getPrivateKey() const {
 	       return privatekey;
@@ -38,6 +37,7 @@ PYBIND11_MODULE(cle_component,greetings)
    // bindings to Cle class
     py::class_<Cle>(greetings, "Cle", py::dynamic_attr())
         .def(py::init<>())
+	.def("initialize", &Cle::initialize)
         .def("getPrivateKey", &Cle::getPrivateKey)
         .def("getPublicKey", &Cle::getPublicKey);
 }
