@@ -1,7 +1,6 @@
 CPPFLAGS += `python3-config --includes`
 LIBS=`python3-config --ldflags`
 LIBS += -luECC
-LDFLAGS += -L/micro-ecc
 
 COMPOSANT = cle_component
 
