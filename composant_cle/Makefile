@@ -1,8 +1,7 @@
 CPPFLAGS += `python3-config --includes`
-LIBS=`python3-config --ldflags`
+LIBS = `python3-config --ldflags` -luecc
 
 COMPOSANT = cle_component
-
 LIBSO = ${COMPOSANT}.so
 LIBSO_OBJS = ${COMPOSANT}.o
 
@@ -11,15 +10,16 @@ all: test $(LIBSO)
 include ../gcc.mk
 include ../pybind11.mk
 
+$(LIBSO): $(LIBSO_OBJS)
+	$(CXX) -o $@ -shared $^ $(LIBS)
 
 test: $(LIBSO)
 	echo "execution du test"
 	python3 test.py
-	
+
 clean:
-	rm -f ${LIBSO}  ${LIBSO_OBJS}
+	rm -f $(LIBSO) $(LIBSO_OBJS)
 
-
-${DESTINATION_LIBSO}: ${LIBSO}
+$(DESTINATION_LIBSO): $(LIBSO)
 	cp $< $@
 
