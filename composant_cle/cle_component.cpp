@@ -26,7 +26,7 @@ class Cle
 	void initialize(std::string &pk){
 		privatekey = pk;
 		uint8_t a = castStringToUint8(privatekey);
-		#uECC_make_key(&a,&b,uECC_SUPPORTS_secp256k1);
+		//uECC_make_key(&a,&b,uECC_SUPPORTS_secp256k1);
 	}
         const std::string &getPrivateKey() const {
 	       return privatekey;
