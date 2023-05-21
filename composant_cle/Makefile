@@ -1,4 +1,4 @@
-LDFLAGS = -L/micro-ecc
+LDFLAGS = -L/micro-ecc/uECC.h
 CPPFLAGS += `python3-config --includes`
 LIBS=`python3-config --ldflags`
 LDLIBS += -luECC
