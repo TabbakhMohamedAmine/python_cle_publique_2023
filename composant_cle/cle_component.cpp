@@ -1,5 +1,7 @@
 #include <pybind11/pybind11.h>
 #include "micro-ecc/uECC.h"
+#include <string>
+#include <sstream>
 
 char version[]="1.0";
 
@@ -12,11 +14,19 @@ class Cle
     public:
         Cle(){}
 	
+	uint8_t castStringToUint8(const std::string& str) {
+		
+   		std::istringstream iss(str);
+    		int intValue;
+    		iss >> intValue;
+		
+    		if (intValue < 0 || intValue > 255) {}
+    		return static_cast<uint8_t>(intValue);
+	}
 	void initialize(std::string &pk){
 		privatekey = pk;
-		uint8_t a = (uint8_t) privatekey;
-		uint8_t b = (uint8_t) publickey
-		uECC_make_key(&a,&b,uECC_SUPPORTS_secp256k1);
+		uint8_t a = castStringToUint8(privatekey);
+		#uECC_make_key(&a,&b,uECC_SUPPORTS_secp256k1);
 	}
         const std::string &getPrivateKey() const {
 	       return privatekey;
