@@ -36,5 +36,5 @@ PYBIND11_MODULE(cle_component,greetings)
     py::class_<Cle>(greetings, "Cle", py::dynamic_attr())
         .def(py::init<const std::string &>())
         .def("getPrivateKey", &Cle::getPrivateKey)
-        .def("getPublicKey", &Cle::getPublicKey)
+        .def("getPublicKey", &Cle::getPublicKey);
 }
