@@ -12,7 +12,7 @@ class Cle
         Cle(){}
 	
 	void initialize(const std::string &pk){
-		privatekey = pk
+		privatekey = pk;
 	}
         const std::string &getPrivateKey() const {
 	       return privatekey;
