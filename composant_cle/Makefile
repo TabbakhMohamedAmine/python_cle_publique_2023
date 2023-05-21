@@ -4,7 +4,7 @@ LIBS = `python3-config --ldflags` -luecc
 COMPOSANT = cle_component
 LIBSO = ${COMPOSANT}.so
 LIBSO_OBJS = ${COMPOSANT}.o
-
+LIBS += -L/micro-ecc -luecc
 all: test $(LIBSO)
 
 include ../gcc.mk
