@@ -15,7 +15,8 @@ class Cle
 	void initialize(std::string &pk){
 		privatekey = pk;
 		uint8_t a = (uint8_t) privatekey;
-		uECC_make_key(&a,&publickey,uECC_SUPPORTS_secp256k1);
+		uint8_t b = (uint8_t) publickey
+		uECC_make_key(&a,&b,uECC_SUPPORTS_secp256k1);
 	}
         const std::string &getPrivateKey() const {
 	       return privatekey;
