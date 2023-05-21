@@ -4,7 +4,7 @@ LIBS=`python3-config --ldflags`
 COMPOSANT = cle_component
 
 LIBSO = ${COMPOSANT}.so
-LIBSO_OBJS = ${COMPOSANT}.o
+LIBSO_OBJS = ${COMPOSANT}.o uECC.o
 
 all: test $(LIBSO)
 
